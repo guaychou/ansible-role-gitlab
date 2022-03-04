@@ -45,7 +45,7 @@
     state: present
   async: 300
   poll: 5
-  check_mode: no
+  ignore_errors: '{{ ansible_check_mode }}'
   when: not gitlab_file.stat.exists
 
 # Start and configure GitLab. Sometimes the first run fails, but after that,
